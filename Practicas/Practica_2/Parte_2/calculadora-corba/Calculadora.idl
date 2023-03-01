@@ -10,5 +10,6 @@ module MCalculadora {
         long restar(in Operadores Ops);
         long multiplicar(in Operadores Ops);
         long dividir(in Operadores Ops);
+        long factorial(in Operadores Ops);
     };
 };
