@@ -24,7 +24,10 @@ public class ImplementacionFunciones extends ICalculadoraPOA {
     }
 
     public int factorial(Operadores ops) {
-        int factorial = 0;
-        return ops.a * ops.a;
+        int resultado = 1;
+        for (int i = 1; i <= ops.a; i++) {
+            resultado *= i;
+        }
+        return resultado;
     }
 }
