@@ -1,4 +1,4 @@
-package Practicas.Practica_1.Practica_1.src;
+package mainpkg;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import Practicas.Practica_1.Practica_1.src.Circulo;
+
 
 public class Servidor {
     public static void main(String[] args) {
@@ -27,9 +27,12 @@ public class Servidor {
                 System.out.println("Cliente conectado");
                 in = new DataInputStream(sc.getInputStream());
                 out = new DataOutputStream(sc.getOutputStream());
-                String mensaje = in.readUTF();
-                System.out.println(mensaje);
-                out.writeUTF("Hola mundo desde el cliente");
+                Double inClient = in.readDouble();
+                System.out.println("He recibido un radio de: " + inClient);
+                circulo.setRadio(inClient);
+                double area = circulo.areaCirculo();
+                out.writeDouble(area);
+                System.out.println("He calculado el area y es: " + area);
                 sc.close();
                 System.out.println("Cliente desconectado");
             }

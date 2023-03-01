@@ -1,10 +1,13 @@
-package Practicas.Practica_1;
+package mainpkg;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 public class Cliente {
 
@@ -13,13 +16,21 @@ public class Cliente {
         final int PUERTO = 5001;
         DataInputStream in;
         DataOutputStream out;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca el radio de su circulo");
+        double input = scanner.nextDouble();
+        scanner.close();
         try {
+        	Circulo circulo = new Circulo();
+        	circulo.setRadio(input);
+            double radio = circulo.getRadio();
             Socket sc = new Socket(HOST, PUERTO);
             in = new DataInputStream(sc.getInputStream());
             out = new DataOutputStream(sc.getOutputStream());
-            out.writeUTF("12");
-            String mensaje = in.readUTF();
-            System.out.println(mensaje);
+            out.writeDouble(radio);
+            double recv = in.readDouble();
+            String output = "El area calculada del circulo es: " + recv;
+            System.out.println(output);
             sc.close();
         } catch (
 

@@ -1,7 +1,6 @@
-package Practicas;
-
+package mainpkg;
 public class Circulo {
-    public static final double PI = 3.1416;
+    public double PI = 3.1416;
     public double radio;
 
     public Circulo() {
