@@ -1,0 +1,219 @@
+/* CSS para el apartado pedir nombre*/
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: #fff;
+    width: 500px;
+    max-width: 80%;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.popup h2 {
+    color: rgb(0, 0, 0);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.popup input[type="text"] {
+    width: 50%;
+    height: 35px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.popup button {
+    height: 35px;
+    padding: 10px;
+    background-color: #0b9869;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #076847;
+}
+
+/*General*/
+.chat-container {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-image: url("fondo.jpg");
+}
+
+/*Texto CHATSOCKET*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    height: 10%;
+    background-color: #0b9869;
+    color: #fff;
+    font-size: 40px;
+}
+
+/*Users*/
+.users-container {
+    position: absolute;
+    left: 0%;
+    height: 85%;
+    width: 30%;
+    overflow: auto;
+    margin: 0%;
+    border: #474747 1px solid;
+    background-color: #fff;
+}
+
+.users-container .header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: #474747 1px solid;
+    height: 10%;
+}
+
+/*Alineamos a la derecha*/
+.derecha {
+    position: relative;
+    left: 30%;
+    width: 70%;
+}
+
+
+.input-area {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    left: 32%;
+    width: 100%;
+    top: 95%;
+    display: flex;
+    flex-direction: row;
+}
+
+.input-area input[type="text"] {
+    position: fixed;
+    top: 91%;
+    height: 40px;
+    width: 60%;
+    left: 32%;
+    border-radius: 50px;
+    padding-left: 2%;
+}
+
+.input-area button {
+    position: fixed;
+    padding: 13px;
+    top: 91%;
+    left: 95%;
+    background-color: #075e54;
+    color: #fff;
+    border: none;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+/*Mensajes*/
+
+.chat-area {
+    position: fixed;
+    overflow-y: auto;
+    height: 70%;
+    width: 65%;
+    margin: 10px;
+    left: 32%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.message {
+    display: flex;
+    background-color: #d1f9b3;
+    border-radius: 10px;
+    margin: 10px;
+    max-width: fit-content;
+    flex-direction: column;
+}
+
+.message .sender {
+    font-weight: bold;
+    font-size: large;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.message .content {
+    font-size: 14px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.message .timestamp {
+    font-size: 12px;
+    color: #777;
+    text-align: right;
+    bottom: 1%;
+    right: 1%;
+    margin-top: 5px;
+}
+
+
+/* Estilos para la lista de usuarios conectados */
+#users-list {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+    
+}
+
+#users-list .user-item {
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+#users-list .user-item:last-child {
+    margin-bottom: 0;
+}
+
+#users-list .user-item .username {
+    color: #333;
+    font-weight: bold;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: green;
+    margin-right: 10px;
+}

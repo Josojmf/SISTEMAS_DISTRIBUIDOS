@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- Contenedor para el popup, es decir el inicio al registrarte como usuario -->
+    <div class="fijado">
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <h2>Bienvenido al Chat</h2>
+                <form id="username-form">
+                    <input id="input-username" type="text" placeholder="Escriba su nombre..." autocomplete="off">
+                    <button onclick="closePopup()">Unirme</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contendor del SocketChat -->
+        <div id="chat-container" class="chat-container" style="display: none;">
+            <div class="header">
+                <span>SocketChat</span>
+            </div>
+
+            <!-- Contenedor para mostrar los usuarios en linea -->
+            <div id="users-container" class="users-container">
+                <div class="header">
+                    En linea
+                </div>
+
+                <div id="users-list" class="users-list"></div>
+            </div>
+
+            <!-- Contenedor para escribir y mostrar los mensajes  -->
+            <div class="derecha">
+                <div id="messages" class="chat-area"></div>
+
+                <div id="input-area" class="input-area">
+                    <form id="message-form">
+                        <input id="input-message" type="text" placeholder="Escriba un mensaje..." autocomplete="off">
+                        <button>Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
