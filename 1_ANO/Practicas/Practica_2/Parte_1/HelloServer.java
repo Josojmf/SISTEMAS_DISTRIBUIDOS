@@ -52,8 +52,9 @@ public class HelloServer {
       NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
 
       // bind the Object Reference in Naming
-      String name = "Hello";
-      NameComponent path[] = ncRef.to_name(name);
+        String name = "Hello";
+        NameComponent path[] = ncRef.to_name(name);
+
       ncRef.rebind(path, href);
 
       System.out.println("HelloServer ready and waiting ...");
